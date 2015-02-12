@@ -1,0 +1,216 @@
+
+<!-- The below code sets the color for the schedule to use, entered in HEX notation, or normal color names -->
+<style>
+/*This is for the background of the site */
+html, body {
+	background-color: #756b5e;
+}
+/*This is for the table boarder */
+table {
+	background-color: #aaaaaa;
+}
+/*This is for the background of the table */
+tr {
+	background-color: #191919;
+	font-size: 45px;
+	margin: 0;
+}
+/*This is for the font and color of the text */
+td {
+	color: #99ccff;
+    font-family: 'Avenir', sans-serif;
+    font-size: 45px;
+    font-weight: 400;
+    text-align: center;
+}
+
+</style>
+<head>
+	<title>MKA Schedule</title>
+</head>
+<center>
+<table id="schedule" border="1" style="text-align: center">
+<tr>
+<!-- The table that the code is inserted into -->
+<td id="block"><strong>Block</strong></td>
+</tr>
+</table>
+</center>
+<script>
+
+	// Make your own schedule!
+	// Follow the instructions in the comments, by the relavant blocks of code
+
+	// This is a schedule for: _________ (Put your name here!)
+
+	// Function for adding the items (You dont need to worry about this!)
+	function scheduleItem (block) {
+    this.block = block; 
+	}
+	// Prototype tag lets javascript add to existing HTML code, eg. the rows (You dont need to worry about this!)
+	scheduleItem.prototype.write = function() {
+    var table=document.getElementById("schedule");
+    var row=table.insertRow(-1);
+    var cell1=row.insertCell(0);
+    cell1.innerHTML=this.block;
+	} 
+	//Blocks below
+	var letterDay=prompt("Enter the letter day:");
+	var currentLetterDay = letterDay.toUpperCase();
+	var block1 = new scheduleItem("  "); // Put your block one class here! (Between the quotation marks, and between the parentheses!)
+	var block2 = new scheduleItem("  "); // Put your block two class here!
+	var block3 = new scheduleItem("  "); // Put your block three class here!
+	var block4 = new scheduleItem("  "); // Put your block four class here!
+	var block5 = new scheduleItem("  "); // Put your block five class here!
+	var block6 = new scheduleItem("  "); // Put your block six class here!
+	var block7 = new scheduleItem("  "); // Put your block seven class here!
+	var block8 = new scheduleItem("  "); // Put your block eight class here!
+	var cwp = new scheduleItem("CWP"); 
+	var lunch1 = new scheduleItem("Early Lunch");
+	var lunch2 = new scheduleItem("Lunch 2");
+	var lunch3 = new scheduleItem("Late Lunch");
+	var meetingPeriod = new scheduleItem("Meeting Period");
+	var helpDesk = new scheduleItem("Help Desk");
+	var drop = new scheduleItem("Free"); // Use this block if you drop a class, Change to study hall if you dont have frees
+
+	// Error handling, if a invalid input is entered, this message will be displayed on to the website.
+	var error = new scheduleItem('Error: Invalid input, please reload the page and try again.');
+
+
+	// Printing the letter day based on the user input
+	// Please edit the order of the blocks to be matching with your lunch blocks, by inserting lunch1.write();, lunch2.write(); or lunch3.write(); in the appropriate spots
+	// Just delete the double slash infront of the lunch you have, execpt for lunch twos
+	if(currentLetterDay == "A"){ 
+
+		// A-Day block order here!
+
+		block1.write();
+		cwp.write();
+		block2.write();
+
+		//lunch1.write(); // here if you have a lunch 1
+
+		block3.write(); // If this block is a free replace it with lunch2.write();
+
+		//lunch3.write(); // here if you have a lunch 3
+
+		block4.write();
+		meetingPeriod.write();
+	} else if(currentLetterDay == "B"){
+		// B-Day block order here!
+		block5.write();
+		cwp.write();
+		block6.write();
+
+		//lunch1.write(); // here if you have a lunch 1
+
+		block7.write(); // If this block is a free replace it with lunch2.write();
+
+		//lunch3.write(); // here if you have a lunch 3
+
+		block8.write();
+		meetingPeriod.write();
+	} else if(currentLetterDay == "C"){
+
+		// C-Day block order here!
+
+		block2.write();
+		cwp.write();
+		block4.write();
+
+		//lunch1.write(); // here if you have a lunch 1
+
+		block1.write(); // If this block is a free replace it with lunch2.write();
+
+		//lunch3.write(); // here if you have a lunch 3
+
+		block3.write();
+		meetingPeriod.write();
+	} else if(currentLetterDay == "D"){
+
+		// D-Day block order here!
+
+		block6.write();
+		cwp.write();
+		block8.write();
+
+		//lunch1.write(); // here if you have a lunch 1
+
+		block5.write(); // If this block is a free replace it with lunch2.write();
+
+		//lunch3.write(); // here if you have a lunch 3
+
+		block7.write();
+		meetingPeriod.write();
+	} else if(currentLetterDay == "E"){
+
+		// E-Day block order here!
+
+		block3.write();
+		cwp.write();
+		block1.write();
+
+		//lunch1.write(); // here if you have a lunch 1
+
+		block4.write(); // If this block is a free replace it with lunch2.write();
+
+		//lunch3.write(); // here if you have a lunch 3
+
+		block2.write();
+		meetingPeriod.write();
+	} else if(currentLetterDay == "F"){
+
+		// F-Day block order here!
+
+		block7.write();
+		cwp.write();
+		block5.write();
+
+		//lunch1.write(); // here if you have a lunch 1
+
+		block8.write(); // If this block is a free replace it with lunch2.write();
+
+		//lunch3.write(); // here if you have a lunch 3
+
+		block6.write();
+		meetingPeriod.write();
+	} else if(currentLetterDay == "G"){
+
+		// G-Day block order here!
+
+		block4.write();
+		cwp.write();
+		block3.write();
+
+		//lunch1.write(); // here if you have a lunch 1
+
+		block2.write(); // If this block is a free replace it with lunch2.write();
+
+		//lunch3.write(); // here if you have a lunch 3
+
+		block1.write();
+		meetingPeriod.write();
+	} else if(currentLetterDay == "H"){
+
+		// H-Day block order here! 
+
+		block8.write();
+		cwp.write();
+		block7.write();
+
+		//lunch1.write(); // here if you have a lunch 1
+
+		block6.write(); // If this block is a free replace it with lunch2.write();
+
+		//lunch3.write(); // here if you have a lunch 3
+
+		block5.write();
+		meetingPeriod.write();
+	} else { //Errors
+		error.write();
+
+		// If you have gotten this far, you should have finished building your very own schedule!
+		// Open the file in the browser of your choice and make sure it works!
+	}
+</script>
+<!-- Code by David Harvey -->
